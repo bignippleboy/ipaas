@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	 <groupId>com.github.ipaas.ifw</groupId>
+	<artifactId>ifw_dubbo_server</artifactId>
+	<version>1.0.2-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<dubbo_version>2.8.3</dubbo_version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${dubbo_version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/dubbo-2.8.3.jar</systemPath>			
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-container-api</artifactId>
+			<version>${dubbo_version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/dubbo-container-api-2.8.3.jar</systemPath>	
+			<exclusions>
+				<exclusion>
+					<groupId>com.alibaba</groupId>
+					<artifactId>dubbo-common</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo-container-spring</artifactId>
+			<version>${dubbo_version}</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/dubbo-container-spring-2.8.3.jar</systemPath>				
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/scripts/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+</project>

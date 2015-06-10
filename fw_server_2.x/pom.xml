@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.ipaas.ifw</groupId>
+	<artifactId>com.github.ipaas.ifw.server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<openfw_version>0.0.1-SNAPSHOT</openfw_version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.jdbc</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.component</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.cache</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.mq</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.context.spring</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.server.ice</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.server.mq.consumer</artifactId>
+			<version>${openfw_version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/scripts/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>
