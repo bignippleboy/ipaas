@@ -1,0 +1,17 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.ipaas.ifw</groupId>
+		<artifactId>com.github.ipaas.ifw</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>com.github.ipaas.ifw.server.mq.consumer</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>com.github.ipaas.ifw</groupId>
+			<artifactId>com.github.ipaas.ifw.mq</artifactId>
+			<version>${fw_version}</version>
+		</dependency>
+	</dependencies>
+</project>
